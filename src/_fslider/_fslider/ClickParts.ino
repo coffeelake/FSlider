@@ -1,9 +1,13 @@
-boolean clickButton(int pos, int lvl)
+boolean clickButton(int pos, int lvl,boolean delaybtn)
 {
   int hSize = 70;
   int textpos = 25;
   int tmpp = (pos * hSize) + 20;
-int delayms=50;
+  int delayms = 400;
+  if(!delaybtn)
+  {
+    delayms=0;
+  }
   if (myTouch.dataAvailable()) {
     myTouch.read();
     x = myTouch.getX(); // X coordinate where the screen has been pressed
@@ -14,17 +18,21 @@ int delayms=50;
       {
         guiChange = 1;
         currentLvl = lvl;
-          delay(delayms);  
+        delay(delayms);
         return true;
       }
-        delay(delayms);
+      delay(delayms);
       return false;
     }
   }
 }
-boolean clickHalfButton(int pos, int lvl, boolean left)
+boolean clickHalfButton(int pos, int lvl, boolean left,boolean delaybtn)
 {
-  int delayms=50;
+  int delayms = 50;
+   if(!delaybtn)
+  {
+    delayms=0;
+  }
   int hSize = 70;
   int textpos = 25;
   int tmpp = (pos * hSize) + 20;
@@ -41,7 +49,7 @@ boolean clickHalfButton(int pos, int lvl, boolean left)
           guiChange = 1;
           currentLvl = lvl;
         }
-         delay(delayms);
+        delay(delayms);
         return true;
       }
     }
@@ -53,11 +61,11 @@ boolean clickHalfButton(int pos, int lvl, boolean left)
           guiChange = 1;
           currentLvl = lvl;
         }
-          delay(delayms);
+        delay(delayms);
         return true;
       }
     }
-       delay(delayms);
+    delay(delayms);
     return false;
   }
 }

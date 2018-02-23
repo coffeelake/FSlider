@@ -22,6 +22,15 @@ int colorRed[3] {239, 7, 7};
 //==== Top Variables
 String topText;
 
+//==== Slider Variables
+int sliderStartPos;
+int sliderEndPos;
+int sliderPos;
+int motionType;
+boolean sliderInMotion;
+int motionTime;
+int sliderDirection;
+
 void setup() {
   // Initial setup
   myGLCD.InitLCD(PORTRAIT);
@@ -29,12 +38,20 @@ void setup() {
   myTouch.InitTouch();
   myTouch.setPrecision(PREC_MEDIUM);
   // Defining Pin Modes
-topText="";
+  topText = "";
   currentLvl = -1; // Indicates the menu lvl
   currentPage = 0; // Indicates that we are at Home Screen
   guiChange = 1;
- bannerChange=1;
- footerChange=1;
+  bannerChange = 1;
+  footerChange = 1;
+  motionType = 0;
+  sliderStartPos = 0;
+  sliderEndPos = 0;
+  sliderPos = 0;
+  sliderInMotion = false;
+  motionTime=0;
+  sliderDirection=0;
+  
   DrawGuiHandler();
   delay(1500);
   currentLvl = 0;
@@ -53,17 +70,20 @@ void loop() {
     DrawGuiHandler();
     guiChange = 0;
   }
- if (bannerChange == 1)
+  if (bannerChange == 1)
   {
     BannerHandler();
-    bannerChange=0;
+    bannerChange = 0;
   }
-   if (footerChange == 1)
+  if (footerChange == 1)
   {
     FooterHandler();
-    footerChange=0;
+    footerChange = 0;
   }
 
-  
-  MotionHandler();
+  if (sliderInMotion)
+  {
+    MotionHandler();
+  }
+
 }

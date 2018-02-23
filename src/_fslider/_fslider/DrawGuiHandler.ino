@@ -36,25 +36,25 @@ void DrawGuiHandler() {
   else if (currentLvl == 2)
   {
     drawBg();
-    drawButton("undermeny2", 0);
-    drawButton("undermeny2", 1);
-    drawButton("undermeny2", 2);
+    drawButton("--", 0);
+    drawButton("--", 1);
+    drawButton("--", 2);
     drawButton("<< Tillbaka", 3);
   }
   else if (currentLvl == 3)
   {
      drawBg();
-    drawButton("undermeny3", 0);
-    drawButton("undermeny3", 1);
-    drawButton("undermeny3", 2);
+    drawButton("--", 0);
+    drawButton("--", 1);
+    drawButton("--", 2);
     drawButton("<< Tillbaka", 3);
   }
   else if (currentLvl == 4)
   {
      drawBg();
-    drawButton("undermeny4", 0);
-    drawButton("undermeny4", 1);
-    drawButton("undermeny4", 2);
+    drawButton("--", 0);
+    drawButton("--", 1);
+    drawButton("--", 2);
     drawButton("<< Tillbaka", 3);
   }
    // this is the a>b function ----> submenu ---> ok button
@@ -87,5 +87,18 @@ void DrawGuiHandler() {
      drawButton("Continue", 0);
     drawButton("Avsluta", 2);
     drawButton("back to menu", 3);
+  }
+   else if (currentLvl == 9)
+  {   
+     drawBg();
+     drawButton("slide Done", 0);   
+  }
+   else if (currentLvl == 10)
+  {   
+     drawBg();
+     drawButton("Set time", 0);   
+    
+     drawButton("Ok >>", 2);
+    drawButton("<< Tillbaka", 3);
   }
 }

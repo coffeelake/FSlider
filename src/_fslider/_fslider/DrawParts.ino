@@ -36,6 +36,11 @@ void drawFooter()
 {
   myGLCD.setColor(0, 0, 0);
   myGLCD.fillRect (0, 300, 239, 325);
+
+   myGLCD.setColor(255, 255, 255); // Sets color to white
+  myGLCD.setFont(SmallFont); // Sets the font to big
+  myGLCD.setBackColor(0, 0, 0); // Sets the background color of the area where the text will be printed to green, same as the button
+  myGLCD.print("v1.0", RIGHT, 305); // Prints the string
 }
 
 
@@ -46,7 +51,7 @@ void drawButton(String text, int pos)
   int textpos = 25;
   int tmpp = (pos * hSize) + 20;
   int txt1 = (pos * hSize) + 20 + textpos;
-  myGLCD.setColor(0, 162, 255); // Sets green color
+  myGLCD.setColor(0, 162, 255); 
   myGLCD.fillRect (0, tmpp, 239, tmpp + hSize); // Draws filled rounded rectangle
   myGLCD.setColor(255, 255, 255); // Sets color to white
   myGLCD.setFont(BigFont); // Sets the font to big
@@ -65,7 +70,7 @@ void drawHalfButton(String text, int pos,boolean left)
  
  if(left)
  {
-   myGLCD.setColor(0, 162, 10); // Sets green color
+   myGLCD.setColor(0, 162, 255); 
    myGLCD.fillRect (0, tmpp, 119, tmpp + hSize); // Draws filled rounded rectangle
     myGLCD.setColor(255, 255, 255); // Sets color to white
   myGLCD.setFont(BigFont); // Sets the font to big
@@ -76,7 +81,7 @@ void drawHalfButton(String text, int pos,boolean left)
  }
  else
  {
-    myGLCD.setColor(0, 162, 10); // Sets green color
+   myGLCD.setColor(0, 162, 255); 
    myGLCD.fillRect (119, tmpp, 239, tmpp + hSize); // Draws filled rounded rectangle
     myGLCD.setColor(255, 255, 255); // Sets color to white
   myGLCD.setFont(BigFont); // Sets the font to big
