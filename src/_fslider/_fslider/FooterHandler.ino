@@ -1,0 +1,4 @@
+void FooterHandler(){
+  drawFooter();  
+}
+
