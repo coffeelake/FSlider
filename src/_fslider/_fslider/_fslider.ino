@@ -30,6 +30,11 @@ int motionType;
 boolean sliderInMotion;
 int motionTime;
 int sliderDirection;
+int slideH;
+int slideM;
+int slideS;
+
+
 
 void setup() {
   // Initial setup
@@ -51,6 +56,10 @@ void setup() {
   sliderInMotion = false;
   motionTime=0;
   sliderDirection=0;
+ slideH=0;
+slideM=0;
+ slideS=0;
+
   
   DrawGuiHandler();
   delay(1500);

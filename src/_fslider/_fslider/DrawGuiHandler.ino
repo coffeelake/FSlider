@@ -15,23 +15,23 @@ void DrawGuiHandler() {
   // this is the a>b function
   else if (currentLvl == 0)
   {
-   drawBg();
+    drawBg();
     myGLCD.setColor(0, 162, 255);
     drawButton("A --> B", 0);
-    drawButton("tada1", 1);
-    drawButton("tada2", 2);
-    drawButton("tada3", 3);
+    drawButton(" ", 1);
+    drawButton(" ", 2);
+    drawButton(" ", 3);
   }
   // this is the a>b function ----> submenu
   else if (currentLvl == 1)
   {
-      drawBg();
+    drawBg();
     drawBanner("A>B");
-    drawButton("valj slut", 0);
+    drawButton("Choose endpoint", 0);
     drawHalfButton("<<", 1, true);
     drawHalfButton(">>", 1, false);
     drawButton("Ok >>", 2);
-    drawButton("<< Tillbaka", 3);
+    drawButton("<< Back", 3);
   }
   else if (currentLvl == 2)
   {
@@ -39,66 +39,101 @@ void DrawGuiHandler() {
     drawButton("--", 0);
     drawButton("--", 1);
     drawButton("--", 2);
-    drawButton("<< Tillbaka", 3);
+    drawButton("<< Back", 3);
   }
   else if (currentLvl == 3)
   {
-     drawBg();
+    drawBg();
     drawButton("--", 0);
     drawButton("--", 1);
     drawButton("--", 2);
-    drawButton("<< Tillbaka", 3);
+    drawButton("<< Back", 3);
   }
   else if (currentLvl == 4)
   {
-     drawBg();
+    drawBg();
     drawButton("--", 0);
     drawButton("--", 1);
     drawButton("--", 2);
-    drawButton("<< Tillbaka", 3);
+    drawButton("<< Back", 3);
   }
-   // this is the a>b function ----> submenu ---> ok button
+  // this is the a>b function ----> submenu ---> ok button
   else if (currentLvl == 5)
-  {   
-     drawBg();
+  {
+    drawBg();
     drawButton("valj start", 0);
     drawHalfButton("<<", 1, true);
     drawHalfButton(">>", 1, false);
     drawButton("Ok >>", 2);
-    drawButton("<< Tillbaka", 3);
+    drawButton("<< Back", 3);
   }
-   // this is the a>b function ----> submenu ---> ok button ----> ok button
+  // this is the a>b function ----> submenu ---> ok button ----> ok button
   else if (currentLvl == 6)
-  {   
-     drawBg();
-    drawButton("start", 0);  
-    drawButton("<< Tillbaka", 3);
+  {
+    drawBg();
+    drawButton("Start", 0);
+    drawButton("<< Back", 3);
   }
-   // this is the a>b function ----> submenu ---> ok button ----> ok button ---> start
+  // this is the a>b function ----> submenu ---> ok button ----> ok button ---> start
   else if (currentLvl == 7)
-  {   
+  {
     drawBg();
     drawButton("Pause", 3);
   }
-   // this is the a>b function ----> submenu ---> ok button ----> ok button ---> start --> pause
+  // this is the a>b function ----> submenu ---> ok button ----> ok button ---> start --> pause
   else if (currentLvl == 8)
-  {   
-     drawBg();
-     drawButton("Continue", 0);
-    drawButton("Avsluta", 2);
-    drawButton("back to menu", 3);
+  {
+    drawBg();
+    drawButton("Continue", 0);
+    drawButton("End", 2);
+    drawButton("Back to menu", 3);
   }
-   else if (currentLvl == 9)
-  {   
-     drawBg();
-     drawButton("slide Done", 0);   
+  else if (currentLvl == 9)
+  {
+    drawBg();
+    drawButton("Slide done", 0);
   }
-   else if (currentLvl == 10)
-  {   
-     drawBg();
-     drawButton("Set time", 0);   
+  else if (currentLvl == 10)
+  {
+    drawBg();
+    drawButton("Set time", 0);
+
+    myGLCD.setColor(255, 255, 255);
+    myGLCD.setFont(SmallFont);
+    myGLCD.setBackColor(0, 162, 255);
+    myGLCD.print("  Hour", LEFT, 75);
+    myGLCD.print("Minute", CENTER, 75);
+    myGLCD.print("Second ", RIGHT, 75);
+
+    myGLCD.setFont(SevenSegNumFont);
+    drawButtonArrow(90, 18, true);
+   
     
-     drawButton("Ok >>", 2);
-    drawButton("<< Tillbaka", 3);
+   
+    
+    
+    myGLCD.print(String(slideH), LEFT, 110);
+    drawButtonArrow(165, 18, false);
+
+    drawButtonArrow(90, 105, true);
+    myGLCD.print(String(slideM), CENTER, 110);
+    drawButtonArrow(165, 105, false);
+
+    drawButtonArrow(90, 195, true);
+    myGLCD.print(String(slideH), RIGHT, 110);
+    drawButtonArrow(165, 195, false);
+
+
+
+    myGLCD.setFont(SmallFont);
+    myGLCD.print("=", CENTER, 220);
+    myGLCD.print(" 3sec delay", LEFT, 200);
+    myGLCD.print(" 24 fps", LEFT, 210);
+    myGLCD.print(" 120ms exp", LEFT, 220);
+
+    myGLCD.print("14sec film ", RIGHT, 220);
+
+    drawHalfButton("Ok >>", 3, false);
+    drawHalfButton("<< Back", 3, true);
   }
 }

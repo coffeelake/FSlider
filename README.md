@@ -1,6 +1,11 @@
 # FS
-info
-Free slider
+##Info
+Free slider is just what it sais, its free.
+you can use it on practicly all sliders whith stepper motor.
+Optimal use is Arduino mega and tft touch screen 320x240px
+If you have sugestions im open for it.
+Just download the files set stepper lenght(your slider lenght in stepps).
+upload and run
 
 ## Menu
 
@@ -16,4 +21,3 @@ Free slider
     * 2 nothing
     * 3 nothing
     * 4 nothing
-
